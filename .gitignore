@@ -1,1 +1,3 @@
-WiFiconfig.h
+WiFiConfig.h
+AmbientConfig.h
+.vscode
