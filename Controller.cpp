@@ -55,7 +55,7 @@ void Controller::receive()
 
 void Controller::displayState()
 {
-  M5.Lcd.setCursor(0, 40);
+  M5.Lcd.setCursor(0, 60);
   M5.Lcd.print(this->state);
   M5.Lcd.print("    ");
 }

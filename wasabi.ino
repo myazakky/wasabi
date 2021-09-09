@@ -33,7 +33,7 @@ void loop()
 
 void displayTemprature(float temp)
 {
-  M5.Lcd.setCursor(0, 20);
+  M5.Lcd.setCursor(0, 40);
   M5.Lcd.print("temp: ");
   M5.Lcd.println(temp);
 }

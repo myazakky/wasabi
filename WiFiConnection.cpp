@@ -11,6 +11,8 @@ void connectWiFi()
     M5.Lcd.print(".");
     delay(500);
   }
+  M5.Lcd.clear(0);
+  M5.Lcd.setCursor(0, 20);
   M5.Lcd.print("\nIP: ");
   M5.Lcd.println(WiFi.localIP());
 }
