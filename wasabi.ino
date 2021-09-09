@@ -3,10 +3,12 @@
 #include "TempratureModule.h"
 #include "Ambient.h"
 #include "AmbientConfig.h"
+#include "Controller.h"
 
 TempratureModule tempModule;
 WiFiClient client;
 Ambient ambient;
+Controller controller;
 
 void setup()
 {
@@ -16,6 +18,7 @@ void setup()
   connectWiFi();
   tempModule.initialize();
   ambient.begin(channelId, writeKey, &client);
+  controller.initialize();
 }
 
 void loop()
@@ -23,6 +26,9 @@ void loop()
   float temp = tempModule.waterTemprature();
   displayTemprature(temp);
   sendTemprature(temp);
+  controller.receive();
+
+  M5.update();
 }
 
 void displayTemprature(float temp)
